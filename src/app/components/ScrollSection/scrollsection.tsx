@@ -45,7 +45,7 @@ function ScrollSection() {
                         <Link href='/'>Home</Link>
                     </div>
                     <div className='scroll-section'>
-                        <Link href='/'>About</Link>
+                        <Link href='/about'>About</Link>
                     </div>
                     <div className='scroll-section'>
                         <Link href='/'>CV</Link>

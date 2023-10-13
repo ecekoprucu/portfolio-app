@@ -4,13 +4,6 @@ import Rectangle from './components/Rectangle/rectangle';
 import mermaidImage from '../../public/mermaid.png';
 import ScrollSection from './components/ScrollSection/scrollsection';
 
-export const metadata: Metadata = {
-  title: 'Ece | Created a Next App',
-  icons: {
-    icon: '/favicon.ico'
-  }
-}
-
 export default function Home() {
   return (
     <main className="flex flex-col overflow-hidden items-center justify-between">
