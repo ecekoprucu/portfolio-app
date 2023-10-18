@@ -22,6 +22,7 @@ function ScrollSection() {
               trigger: '.trigger',
               pin: true,
               scrub: 1,
+              snap: 1 / (panels.length - 1),
               end: () =>  "+=" + (sectionRef.current.offsetWidth - innerWidth)
             }
           });
