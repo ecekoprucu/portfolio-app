@@ -7,48 +7,43 @@ import Link from 'next/link';
 
 function ScrollSection() {
 
-    const sectionRef = useRef(null);
-    const triggerRef = useRef(null);
+    const sectionRef = useRef<HTMLDivElement>(null!);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+          gsap.registerPlugin(ScrollTrigger);
+          const panels = gsap.utils.toArray(".scroll-section");
 
-        const pin = gsap.fromTo(
-          sectionRef.current,
-          {
-            translateX: 0,
-          },
-          {
-            translateX: "-100vw",
+          const pin = gsap.to(panels, {
+            xPercent: -100 * (panels.length - 1),
             ease: "none",
-            duration: 2,
+            smoothOrigin: true,
             scrollTrigger: {
-              trigger: triggerRef.current,
               start: "top top",
-              end: "2000 top",
-              scrub: 0.6,
+              trigger: '.trigger',
               pin: true,
-            },
-          }
-        );
-        return () => {
-          pin.kill();
-        };
+              scrub: 1,
+              end: () =>  "+=" + (sectionRef.current.offsetWidth - innerWidth)
+            }
+          });
+
+          return () => {
+            pin.kill();
+          };
+
       }, []);
 
     return (
         <section className='overflow-hidden'>
-            <div ref={triggerRef}>
+            <div className='trigger'>
                 <div ref={sectionRef} className='scroll-section-inner'>
-                  <div className='scroll-section' />
-                    <div className='scroll-section'>
+                    <div className='scroll-section salmon'>
                         <Link href='/'>Home</Link>
                     </div>
-                    <div className='scroll-section'>
+                    <div className='scroll-section light-green'>
                         <Link href='/about'>About</Link>
                     </div>
-                    <div className='scroll-section'>
-                        <Link href='/'>CV</Link>
+                    <div className='scroll-section light-purple'>
+                        <Link href='/ece-koprucu_cv.pdf' download="cv">CV</Link>
                     </div>
                 </div>
             </div>
