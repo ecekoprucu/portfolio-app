@@ -24,7 +24,7 @@ const About = () => {
       }, [currentIndex]);
 
    return (
-    <div className="h-screen flex flex-col items-center justify-center p-80">
+    <div className="h-screen flex flex-col items-center justify-center p-4 w-screen">
          <h1 className="text-4xl">{currentText}</h1>
          <br />
         <AnimateInOut
@@ -42,11 +42,15 @@ const About = () => {
                 <br />
                 JavaScript: The backbone of my development process, allowing for interactive and dynamic applications.
                 <br />
+                <br />
                 ReactJS & React Native: My go-to libraries for building scalable and efficient web and mobile applications. I've successfully delivered projects that cater to diverse user needs using these tools.
+                <br />
                 <br />
                 Redux and Context API: Techniques I use for managing the app's operations.
                 <br />
+                <br />
                 REST API and GraphQL: Methods I employ for handling data in apps.
+                <br />
                 <br />
                 TypeScript: Enhancing code quality and understandability, TypeScript has been instrumental in ensuring type safety in my projects.
                 <br />
